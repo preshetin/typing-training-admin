@@ -19,11 +19,11 @@ export const ExerciseEdit = (props) => (
     <Edit {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
-            <ReferenceInput label="Lesson" source="lessonId" reference="Lessons" validate={required}>
+            <ReferenceInput label="Lesson" source="lessonId" reference="Lessons" >
                 <SelectInput optionText="title" />
             </ReferenceInput>
-            <TextInput source="title" />
-            <LongTextInput source="task" />
+            <TextInput source="title" validate={required} />
+            <LongTextInput source="task" validate={required} />
         </SimpleForm>
     </Edit>
 );
@@ -31,7 +31,7 @@ export const ExerciseEdit = (props) => (
 export const ExerciseCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
-            <ReferenceInput label="Lesson" source="lessonId" reference="Lessons" validate={required} allowEmpty>
+            <ReferenceInput label="Lesson" source="lessonId" reference="Lessons" allowEmpty>
                 <SelectInput optionText="title" />
             </ReferenceInput>
             <TextInput source="title" />
